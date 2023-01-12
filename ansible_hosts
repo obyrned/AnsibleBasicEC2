@@ -1,0 +1,7 @@
+[aws_hosts]
+dev-node1 ansible_host=54.213.97.229 ansible_ssh_private_key_file=~/.ssh/mtckey ansible_ssh_user=ubuntu
+dev-node2 ansible_host=35.87.180.154 ansible_ssh_private_key_file=~/.ssh/mtckey ansible_ssh_user=ubuntu
+dev-node3 ansible_host=34.221.42.172 ansible_ssh_private_key_file=~/.ssh/mtckey ansible_ssh_user=ubuntu
+
+[all:vars]
+ansible_ssh_common_args="-o StrictHostKeyChecking=no -i ~/.ssh/mtckey.pub"

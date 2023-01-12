@@ -1,4 +1,4 @@
-Some very bas
+Some simple Ansible playbooks to install Snapd on my EC2 instances.
 
 
 #### fcc terraform mtckey (change ip address)

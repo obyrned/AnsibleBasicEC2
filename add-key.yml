@@ -1,0 +1,15 @@
+---
+#Add keys, not necessary added with Terraform.
+- name: "Playbook to Add Key to Newly Provisioned EC2 Instance"
+  hosts: aws_hosts
+  vars:
+    - status : "present"
+    - key : "~/.ssh/mtckey.pub"
+
+  tasks:
+
+  - name: "Copy the authorized key file from"
+    authorized_key:
+      user: "{{ansible_user}}"
+      state: "{{status}}"
+      key: "{{ lookup('file', '{{ key }}')}}"

@@ -1,0 +1,18 @@
+---
+#Install the snap store IDK why
+- name: Install snap package manager
+  hosts: aws_hosts
+  become: true
+  tasks:
+  - name: Update apt package cache
+    apt:
+      update_cache: yes
+  - name: Install snapd package
+    apt:
+      name: snapd
+      state: present
+  - name: Enable snapd service
+    service:
+      name: snapd
+      state: started
+      enabled: true

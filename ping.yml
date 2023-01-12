@@ -1,0 +1,9 @@
+---
+#ping your EC2s
+- name: Ping AWS EC2 instances
+  hosts: aws_hosts
+  vars:
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+  tasks:
+    - name: Ping instances
+      ping:
